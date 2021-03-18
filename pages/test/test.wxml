@@ -1,0 +1,59 @@
+<!-- 轮播图区域 -->
+<!-- indicator-dots 属性：显示面板指示点 -->
+<swiper indicator-dots autoplay circular indicator-active-color="red" class="swiper-container">
+  <!-- 第一项 -->
+  <swiper-item>
+    <view class="item">{{testName}}</view>
+  </swiper-item>
+  <!-- 第二项 -->
+  <swiper-item>
+    <view class="item">
+      <image src="{{imgUrl}}"></image>
+    </view>
+  </swiper-item>
+  <!-- 第三项 -->
+  <swiper-item>
+    <view class="item">
+      {{randomNum > 10 ? '大于10':'小于等于10'}}
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="list">
+  <view wx:for="{{array}}" wx:key="id" bindtap="testCy" data-index="{{index}}" data-item="{{item}}"> {{item.message}}{{index}}</view>
+</view>
+
+<!-- scroll-x 属性：允许横向滚动 -->
+<!-- scroll-y 属性：允许纵向滚动 -->
+<!-- 注意：使用竖向滚动时，必须给 scroll-view 一个固定的高度 -->
+<scroll-view class="box" scroll-y>
+  <view>随机数：{{randomNum}} 随机数加100：{{randomNum + 100}}</view>
+ 
+  <view wx:if="{{randomNum > 15}}"> 大于15 </view>
+  <view wx:elif="{{randomNum > 9}}"> 大于9 小于15 </view>
+  <view wx:else> 小于等于9 </view>
+
+  <view>C</view>
+</scroll-view>
+
+<view bindtap="btnTap">
+  <button plain   type="primary">增加按钮</button>
+</view>
+
+<button class="mini" plain size="mini" type="primary" bindtap="getRequest">mini按钮发GET请求</button>
+
+<button  plain  type="primary" bindtap="postRequest">发POST请求</button>
+
+
+<!-- <text selectable>{{time}}</text> -->
+
+<!-- 富文本组件应用场景 -->
+<!-- <rich-text nodes="<h4 style='color: red'>rich-text组件</h4>"></rich-text> -->
+
+<input bindinput="bindKeyInput" class="weui-input" auto-focus placeholder="输入数字"/>
+
+<block wx:if="{{condition}}">
+  <view>1</view>
+  <view>2</view>
+</block>
+<view hidden="{{!condition}}">3</view>

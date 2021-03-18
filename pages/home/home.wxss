@@ -1,86 +1,49 @@
 /* pages/home/home.wxss */
-.swiper-container {
-  /* 轮播图容器的高度 */
-  height: 150px;
+swiper {
+  height: 350rpx;
 }
 
-.item{
+swiper-item image {
+  width: 100%;
   height: 100%;
-  line-height: 150px;
-  text-align: center;
 }
 
-swiper-item:nth-child(1) .item{
-  background-color: lightgreen;
-}
-
-swiper-item:nth-child(2) .item{
-  background-color: lightskyblue;
-}
-
-swiper-item:nth-child(3) .item{
-  background-color: lightcoral;
-}
-
-.list{
+/* 九宫格布局 */
+.grid-list{
   display: flex;
-  flex-direction: row; 
+  flex-wrap: wrap;
+  border-top: 1px solid #efefef;
+  border-left: 1px solid #efefef;
+}
+.grid-item{
+  width: 33.3%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+  border-right: 1px solid #efefef;
+  box-sizing: border-box;
+}
+.grid-item image {
+  z-index: -10;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.grid-item text {
+  z-index: -10;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+
+.img-box {
+  display: flex;
   justify-content: space-around;
-  padding: 10px 0;
-}
-.list view{
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
+  padding: 20rpx 10rpx;
 }
 
-.list view:nth-child(2n){
-  background-color: lightgreen
-}
-.list view:nth-child(2n+1){
-  background-color: lightskyblue
-}
-
-
-/*滚动  */
-.box {
-  width: 100%;
-  height: 160px;
-}
-
-.box view{
-  width: 100%;
-  height: 100px;
-  text-align: center;
-  line-height: 100px;
-}
-
-.box view:nth-child(1) {
-  background-color: lightgreen;
-}
-
-.box view:nth-child(2) {
-  background-color: lightskyblue;
-}
-
-.box view:nth-child(3) {
-  background-color: lightcoral;
-}
-
-image {
-  width: 100%
-}
-
-.mini{
-  margin: 20px 0;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-} 
-
-.weui-input{
-  width: 80%;
-  border: 1px solid #000;
-  margin: 10px auto;
+.img-box image {
+  width: 45%;
 }

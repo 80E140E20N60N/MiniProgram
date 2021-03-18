@@ -1,14 +1,43 @@
 {
   "pages":[
     "pages/home/home",
+    "pages/message/message",
+    "pages/contact/contact",
+    "pages/test/test",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#42a5f5",
-    "navigationBarTitleText": "测试工程",
-    "navigationBarTextStyle":"black"
+    "backgroundColor": "#ccc",
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#2a4b6a",
+    "navigationBarTitleText": "本地生活",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#ed523c",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/tabs/home.png",
+        "selectedIconPath": "images/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/tabs/message.png",
+        "selectedIconPath": "images/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "联系我们",
+        "iconPath": "images/tabs/contact.png",
+        "selectedIconPath": "images/tabs/contact-active.png"
+      }
+  ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

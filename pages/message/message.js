@@ -1,20 +1,18 @@
-// pages/home/home.js
+// pages/message/message.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiperList:[],
-    gridList:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getSwiperList()
-    this.getGridList()
+
   },
 
   /**
@@ -64,38 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  /**
-   * 获取轮播图数据
-   */  
-  getSwiperList () {
-   wx:wx.request({
-     url: 'https://www.escook.cn/slides',
-     method: 'GET',
-     success: (result) => {
-      //  console.log(result);
-       this.setData({
-        swiperList:result.data
-       })
-     },
-   })
-  },
-  /**
-   * 获取九宫格数据
-   */  
-  getGridList(){
-    wx.request({
-      url: 'https://www.escook.cn/categories',
-      method: 'GET',
-      success: (result) => {
-        // console.log(result);
-        this.setData({
-          gridList:result.data
-        })
-      },
-    })
-  },
-  tapGrid(event){
-    console.log(event.target.dataset.item.name);
   }
 })

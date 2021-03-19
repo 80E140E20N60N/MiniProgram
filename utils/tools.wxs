@@ -3,7 +3,8 @@ function toUpper(str){
 }
 
 function formatPhoneNumber(str){
-  if(str.length!==11) return str
+  var reg=getRegExp('^[1][3,4,5,7,8][0-9]{9}$')
+  if(!reg.test(str)) return str
   var arr =str.split('')
   // splice(要操作的位置，0表示不删除，要添加的内容)
   arr.splice(3,0,'-')

@@ -20,4 +20,6 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <navigator open-type="navigateBack" delta="1">go back</navigator>
+  <button bindtap="goBack">go back</button>
 </view>

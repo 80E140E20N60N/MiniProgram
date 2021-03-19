@@ -1,9 +1,11 @@
+<wxs src="../../utils/tools.wxs" module="m2"></wxs>
+
 <!-- 轮播图区域 -->
 <!-- indicator-dots 属性：显示面板指示点 -->
 <swiper indicator-dots autoplay circular indicator-active-color="red" class="swiper-container">
   <!-- 第一项 -->
   <swiper-item>
-    <view class="item">{{testName}}</view>
+    <view class="item">{{m2.toUpper('testName')}}</view>
   </swiper-item>
   <!-- 第二项 -->
   <swiper-item>
@@ -18,6 +20,12 @@
     </view>
   </swiper-item>
 </swiper>
+
+<!-- 色卡  -->
+<view wx:for="{{colorList}}" wx:key="index" class="color" style="background:rgb({{item}})">
+第{{index+1}} rgb:{{item}}
+</view>
+
 
 <view class="list">
   <view wx:for="{{array}}" wx:key="id" bindtap="testCy" data-index="{{index}}" data-item="{{item}}"> {{item.message}}{{index}}</view>
@@ -50,10 +58,21 @@
 <!-- 富文本组件应用场景 -->
 <!-- <rich-text nodes="<h4 style='color: red'>rich-text组件</h4>"></rich-text> -->
 
-<input bindinput="bindKeyInput" class="weui-input" auto-focus placeholder="输入数字"/>
+<input bindinput="bindKeyInput" class="weui-input"  placeholder="输入数字"/>
 
 <block wx:if="{{condition}}">
   <view>1</view>
   <view>2</view>
 </block>
 <view hidden="{{!condition}}">3</view>
+
+<!-- 导航到 tabBar 页面  声明式和编程式-->
+<navigator url="/pages/message/message" open-type="switchTab">导航到tabBar页面</navigator>
+
+<button bindtap="gotoMessage">跳转到tabBar页面</button>
+
+<!-- 导航到 非tabBar 页面  声明式和编程式-->
+<navigator url="/pages/index/index" open-type="navigate">导航到非tabBar页面</navigator>
+
+<button bindtap="gotoIndex">跳转到非tabBar页面</button>
+

@@ -1,0 +1,17 @@
+function toUpper(str){
+  return str.toUpperCase()
+}
+
+function formatPhoneNumber(str){
+  if(str.length!==11) return str
+  var arr =str.split('')
+  // splice(要操作的位置，0表示不删除，要添加的内容)
+  arr.splice(3,0,'-')
+  arr.splice(8,0,'-')
+  return arr.join('')
+}
+
+module.exports={
+  toUpper:toUpper,
+  formatPhoneNumber:formatPhoneNumber
+}

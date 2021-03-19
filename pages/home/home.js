@@ -94,8 +94,6 @@ Page({
         })
       },
     })
-  },
-  tapGrid(event){
-    console.log(event.target.dataset.item.name);
   }
+
 })

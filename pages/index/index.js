@@ -44,5 +44,14 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+
+  /**
+   * 导航返回
+   */
+  goBack: function () {
+    wx.navigateBack({
+      delta:1
+    })
+  },
 })

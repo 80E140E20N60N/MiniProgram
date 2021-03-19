@@ -35,15 +35,18 @@ Page({
       message: 'C'
     }
     ],
-    condition:false
+    condition:false,
+    colorList:[],
+    isLoading:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getRequest()
-    this.postRequest()
+    // this.getRequest()
+    // this.postRequest()
+    this.getColors()
   },
 
   /**
@@ -78,14 +81,19 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      randomNum:Math.random().toFixed(3)*20,
+      colorList:[]
+    })
+    this.getColors(wx.stopPullDownRefresh)  
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    // 上拉触底节流处理
+   !this.data.isLoading &&  this.getColors()
   },
 
   /**
@@ -96,10 +104,10 @@ Page({
   },
 
   /**
-   * 用户点击默认按钮
+   * 用户点击增加按钮
    */
   btnTap: function (e) {
-    // console.log('默认按钮',e);   
+    // console.log('增加按钮',e);   
       this.setData({
         testName:'修改了testName',
         randomNum:this.data.randomNum+1
@@ -109,7 +117,12 @@ Page({
    * 遍历事件绑定并传参
    */ 
   testCy:function(e){
-    console.log('点击了',e.target.dataset);
+    // console.log('点击了',e.target.dataset);
+    if(e.target.dataset.index==0){
+      wx.navigateTo({
+        url: '/pages/index/index',
+      })
+    }
   },
   /**
   * 用户输入事件
@@ -150,6 +163,61 @@ Page({
     success:res=>{
       console.log(res);
     }
+  })
+},
+  /**
+  * 用户输入事件
+  */
+ bindKeyInput: function (e) {
+  // console.log('输入事件',e.detail);   
+  this.setData({
+    randomNum:Number(e.detail.value) 
+  })
+},
+/**
+* 获取颜色请求
+*/
+getColors(callBack){
+  this.setData({
+    isLoading:true
+  })
+  wx.showLoading({
+    title: '加载中...',
+  })
+  wx.request({
+    url: 'https://www.escook.cn/api/color',
+    // method:'GET',
+    success:res=>{
+      // console.log(res);
+      this.setData({
+        colorList:[...this.data.colorList,...res.data.data]
+      })
+    },
+    complete:()=>{
+      // 节流
+      this.setData({
+        isLoading:false
+      })
+      // 请求完成后关闭加载提示
+      wx.hideLoading()
+      callBack && callBack()
+    }
+  })
+},
+  /**
+  * 编程式导航 跳转到tabBar页面
+  */
+  gotoMessage(){
+    wx.switchTab({
+      url: '/pages/message/message',
+    })
+  },
+  /**
+  * 编程式导航 跳转到非tabBar页面
+  */
+ gotoIndex(){
+  wx.navigateTo({
+    url: '/pages/index/index?name=zihan',
   })
 }
 })

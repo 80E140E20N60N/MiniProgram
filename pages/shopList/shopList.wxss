@@ -1,0 +1,25 @@
+/* pages/shopList/shopList.wxss */
+.shop-item{
+  display: flex;
+  padding: 20rpx;
+  margin: 20prx;
+  /* border: 1rpx solid #efefef; */
+  border-radius: 8rpx;
+  box-shadow: 1rpx 1rpx 15rpx #ddd;
+}
+.shop-item .image image{
+  width: 250rpx;
+  height: 250rpx;
+  /* display: block; */
+  margin-right: 25rpx;
+}
+.desc{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 24rpx;
+}
+.desc .name{
+  font-size: 28rpx;
+  font-weight: 700;
+}

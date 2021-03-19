@@ -8,11 +8,11 @@
 
 <!-- 九宫格布局 -->
 <view class="grid-list">
-  <view bindtap="tapGrid" data-item="{{item}}" class="grid-item" wx:for="{{gridList}}" wx:key="id"
+  <navigator url="/pages/shopList/shopList?id={{item.id}}&title={{item.name}}" class="grid-item" wx:for="{{gridList}}" wx:key="id"
   >
     <image src="{{item.icon}}"></image>
     <text>{{item.name}}</text>  
-  </view>
+  </navigator>
 </view>
 
 <!-- 图片区域 -->

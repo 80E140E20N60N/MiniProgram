@@ -3,6 +3,7 @@
     "pages/home/home",
     "pages/message/message",
     "pages/contact/contact",
+    "pages/shopList/shopList",
     "pages/test/test",
     "pages/index/index",
     "pages/logs/logs"

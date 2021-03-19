@@ -84,6 +84,14 @@ image {
 
 .weui-input{
   width: 80%;
+  height:100rpx;
+  padding: 0 20rpx;
   border: 1px solid #000;
   margin: 10px auto;
+}
+
+.color{
+  text-align: center;
+  padding: 20rpx;
+  margin: 15rpx;
 }

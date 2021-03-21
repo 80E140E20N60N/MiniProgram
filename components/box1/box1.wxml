@@ -1,0 +1,12 @@
+<!--components/box1/box1.wxml-->
+<view class="box1">
+  局部引入组件{{count}}
+</view>
+<button bindtap="addNum">ADD</button>
+<view>{{n1}}+{{n2}}={{sum}}</view>
+<button size="mini" bindtap="addN" data-n="n1">ADD N1</button>
+<button size="mini" bindtap="addN" data-n="n2">ADD N2</button>
+<view style="background-color:rgb({{fullColor}})">颜色{{fullColor}}</view>
+<button size="mini" bindtap="addRgb" data-_rgb="r">ADD R</button>
+<button size="mini" bindtap="addRgb" data-_rgb="g">ADD G</button>
+<button size="mini" bindtap="addRgb" data-_rgb="b">ADD B</button> 

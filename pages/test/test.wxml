@@ -21,10 +21,17 @@
   </swiper-item>
 </swiper>
 
-<!-- 色卡  -->
-<view wx:for="{{colorList}}" wx:key="index" class="color" style="background:rgb({{item}})">
-第{{index+1}} rgb:{{item}}
+<!-- 引入组件 -->
+<view>
+<my-test1 num="20"></my-test1>
+<my-test2></my-test2>
 </view>
+
+
+<!-- 色卡  -->
+<!-- <view wx:for="{{colorList}}" wx:key="index" class="color" style="background:rgb({{item}})">
+第{{index+1}} rgb:{{item}}
+</view> -->
 
 
 <view class="list">

@@ -1,0 +1,4 @@
+<!--components/box2/box.wxml-->
+<view>
+  全局引入组件
+</view>

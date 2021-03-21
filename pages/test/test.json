@@ -1,5 +1,7 @@
 {
   "enablePullDownRefresh": true,
   "onReachBottomDistance":50,
-  "usingComponents": {}
+  "usingComponents": {
+    "my-test1":"/components/box1/box1"
+  }
 }

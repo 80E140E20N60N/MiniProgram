@@ -1,0 +1,4 @@
+/* components/box2/box.wxss */
+view{
+  font-size: 30px;
+}

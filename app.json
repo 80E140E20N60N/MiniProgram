@@ -1,10 +1,10 @@
 {
   "pages":[
+    "pages/test/test",
     "pages/home/home",
     "pages/message/message",
     "pages/contact/contact",
     "pages/shopList/shopList",
-    "pages/test/test",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -15,6 +15,9 @@
     "navigationBarTitleText": "本地生活",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh": true
+  },
+  "usingComponents": {
+    "my-test2":"/components/box2/box"
   },
   "tabBar": {
     "selectedColor": "#ed523c",

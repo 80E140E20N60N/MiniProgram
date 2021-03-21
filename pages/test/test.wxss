@@ -95,3 +95,7 @@ image {
   padding: 20rpx;
   margin: 15rpx;
 }
+
+view{
+ font-size: 60px;
+}
